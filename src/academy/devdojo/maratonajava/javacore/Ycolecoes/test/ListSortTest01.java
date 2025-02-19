@@ -11,7 +11,9 @@ public class ListSortTest01 {
         mangas.add("Berserk");
         mangas.add("Hellsing");
         mangas.add("Pokemon");
-        mangas.add("Dragon Ball Z");
+        mangas.add("Dragon Ball Z Kai");
+
+        //opa
         Collections.sort(mangas); //Organizadno em ordem alfabetica, e ordem crescente em numeros
         for(String manga : mangas){
             System.out.println(manga);

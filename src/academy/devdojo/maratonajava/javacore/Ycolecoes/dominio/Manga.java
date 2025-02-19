@@ -1,8 +1,8 @@
 package academy.devdojo.maratonajava.javacore.Ycolecoes.dominio;
 
 import java.util.Objects;
-
-public class Manga {
+//Implementando Comparable pra poder usar sort em objetos
+public class Manga implements Comparable<Manga> {
     private Long id;
     private String nome;
     private double preco;
@@ -50,6 +50,26 @@ public class Manga {
         this.preco = preco;
     }
 
+    //Fazendo o sort funcionar pelo ID
+    @Override
+    public int compareTo(Manga outroManga) {
+        //negativo se o this < outromanga
+        //se this.id == outroManga, return 0
+        //positivo se this > outroManga
+        if(this.id < outroManga.getId()){
+            return -1;
+        }
+        else if(this.id.equals(outroManga.getId())){
+            return 0;
+        } else {
+            return 1;
+        }
+        //Alternativa pro codigo acima
+        //Funciona assim so pra Wrappers e tipos nao primitivos(Nosso id é Long que é Wrapper)
+        //return this.id.compareTo(outroManga.getId());
+
+    }
+
     @Override
     public String toString() {
         return "Manga{" +
@@ -58,4 +78,7 @@ public class Manga {
                 ", preco=" + preco +
                 '}';
     }
+
+
+
 }
