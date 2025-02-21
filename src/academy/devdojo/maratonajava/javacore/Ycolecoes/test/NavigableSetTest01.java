@@ -24,7 +24,7 @@ class MangaPrecoComparator implements Comparator<Manga>{
 
 public class NavigableSetTest01 {
     public static void main(String[] args) {
-        //Usando TreeSet precisa implementar o Comparable
+        //Usando TreeSet precisa implementar o Comparable ou Comparator
         NavigableSet<Smartphone> set = new TreeSet<>(new SmartphoneMarcaComparator());
         Smartphone smartphone = new Smartphone("123", "Nokia");
         set.add(smartphone);

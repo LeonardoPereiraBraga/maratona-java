@@ -7,10 +7,10 @@ public class MapTest01 {
     public static void main(String[] args) {
         //Tipo da chave e tipo do Valor
         Map<String, String> map = new HashMap<>();
-        map.put("teklado", "teclado"); //Chave e valor
+        map.put("teklado", "teclado"); //Criamos uma Chave e valor
         map.put("mouze", "mouse");
         for(String key : map.keySet()){
-            System.out.println(key + " - " + map.get(key));
+            System.out.println(key + " - " + map.get(key)); //teklado - teclado
         }
 
     }
