@@ -23,6 +23,7 @@ public class ComportamentoPorParametroTest03 {
     }
 
     //Metodo generico
+    //Predicate é uma função que recebe um argumento do tipo T e retorna um boolean
     private static <T> List<T> filter(List<T> list, Predicate<T> predicate){
         List<T> filteredList = new ArrayList<>();
         for(T e : list){
