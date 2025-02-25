@@ -14,16 +14,17 @@ public class ComportamentoPorParametroTest03 {
     );
 
     public static void main(String[] args) {
+        List<Integer> nums = List.of(1,2,3,4);
         List<Car> greenCars = filter(cars, car -> car.getColor().equals("green"));
         List<Car> redCars = filter(cars, car -> car.getColor().equals("red"));
+        System.out.println(filter(nums, num -> num > 1 ));
         System.out.println(greenCars);
         System.out.println(redCars);
-        List<Integer> nums = List.of(1,2,3,4);
-        System.out.println(filter(nums, num -> num > 1 ));
+
+
     }
 
     //Metodo generico
-    //Predicate é uma função que recebe um argumento do tipo T e retorna um boolean
     private static <T> List<T> filter(List<T> list, Predicate<T> predicate){
         List<T> filteredList = new ArrayList<>();
         for(T e : list){

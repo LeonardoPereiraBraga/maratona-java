@@ -14,7 +14,7 @@ public class MethodReferenceTest01 {
         List<Anime> animeList = new ArrayList<>(List.of(new Anime("Zenkai", 43), new Anime("One Piece", 800), new Anime("Naruto", 400)));
 
         Collections.sort(animeList, (anime1,anime2) -> anime1.getTitle().compareTo(anime2.getTitle()));
-        Collections.sort(animeList, (a1,a2) -> AnimeComparators.compareByTitle(a1,a2));
+        Collections.sort(animeList, (a1,a2) -> AnimeComparators.compareByTitle(a1,a2));//Lambda
         Collections.sort(animeList, AnimeComparators::compareByTitle); //Usando MethodReference
 
         Collections.sort(animeList, AnimeComparators::comapareByEpisodes);

@@ -6,8 +6,8 @@ public class OuterClassesTest01 {
     //Classe interna
     class Inner{
         public void printOuterClassAtrtribute(){
-            System.out.println(name);
-            System.out.println(OuterClassesTest01.this.name);
+            System.out.println(name); //Monkey D. Luffy
+            System.out.println(OuterClassesTest01.this.name); //Monkey D. Luffy
         }
     }
     public static void main(String[] args) {
