@@ -12,8 +12,9 @@ public class OptionalTest01 {
         System.out.println(o2);
         System.out.println(o3);
 
-        Optional<String> nameOptional = Optional.ofNullable(findName("William"));
+
         //Se nome nao existir empty vai ser Carlos, se existir vai ser William
+        Optional<String> nameOptional = Optional.ofNullable(findName("William"));
         String empty = nameOptional.orElse("Carlos");
         System.out.println(empty);
     }
