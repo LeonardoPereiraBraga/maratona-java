@@ -9,6 +9,10 @@ public class ProducerService {
     public static void save(Producer producer){
         ProducerRepository.save(producer);
     }
+
+    public static void saveTransaction(List<Producer> producers){
+        ProducerRepository.saveTransaction(producers);
+    }
     public static void delete(int id){
         requireValidId(id);
         ProducerRepository.delete(id);
@@ -17,11 +21,31 @@ public class ProducerService {
         requireValidId(producer.getId());
         ProducerRepository.update(producer);
     }
+    public static void updatePreparedStatement(Producer producer){
+        requireValidId(producer.getId());
+        ProducerRepository.updatePreparedStatement(producer);
+    }
     public static List<Producer> findAll(){
         return ProducerRepository.findAll();
     }
     public static List<Producer> findByName(String name){
         return ProducerRepository.findByName(name);
+    }
+    public static List<Producer> findByNamePreparedStatement(String name){
+        return ProducerRepository.findByNamePreparedStatement(name);
+    }
+    public static List<Producer> findByNameCallableStatement(String name){
+        return ProducerRepository.findByNameCallableStatement(name);
+    }
+
+    public static List<Producer> findByNameAndUpdateToUpperCase(String name){
+        return ProducerRepository.findByNameAndUpdateToUpperCase(name);
+    }
+    public static List<Producer> findByNameAndInsertWhenNotFound(String name){
+        return ProducerRepository.findByNameAndInsertWhenNotFound(name);
+    }
+    public static void findByNameAndDelete(String name){
+        ProducerRepository.findByNameAndDelete(name);
     }
     public static void showProducerMetaData(){
         ProducerRepository.showProducerMetaData();
@@ -32,6 +56,7 @@ public class ProducerService {
     public static void showTypeScrollWorking(){
         ProducerRepository.showTypeScrollWorking();
     }
+
 
     private static void requireValidId(Integer id){
         if (id <= 0 || id == null){
